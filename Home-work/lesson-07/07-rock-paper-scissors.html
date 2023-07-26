@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My rock paper scissors game</title>
+  </head>
+  <body>
+    <h1>Rock Paper Scissors</h1>
+    <h2 id="demo1"></h2>
+    <button onclick="game('rock')">Rock</button>
+    <button onclick="game('paper')">Paper</button>
+    <button onclick="game('scissors')">Scissors</button>
+    <script>
+      function game(playarMive) {
+        const computerChoice = pickComputerMove();
+
+        let result = "";
+
+        if (playarMive === "cscissors") {
+          if (computerChoice === "rock") {
+            result = "Thie";
+          } else if (computerChoice === "paper") {
+            result = "  Computer win";
+          } else {
+            result = "You win";
+          }
+        } else if (playarMive === "crock") {
+          if (computerChoice === "rock") {
+            result = "You win";
+          } else if (computerChoice === "paper") {
+            result = "  Computer win";
+          } else {
+            result = "Thie";
+          }
+        } else {
+          if (computerChoice === "rock") {
+            result = "  Computer win";
+          } else if (computerChoice === "paper") {
+            result = "You win";
+          } else {
+            result = "Thie";
+          }
+
+          document.getElementById("demo1").innerHTML = result;
+        }
+      }
+
+      function pickComputerMove() {
+        const random = Math.random();
+
+        let conputerChoice = "";
+
+        if (random >= 0 && random < 1 / 3) {
+          conputerChoice = "rock";
+        } else if (random >= 1 / 3 && random < 2 / 3) {
+          conputerChoice = "paper";
+        } else {
+          conputerChoice = "scissors";
+        }
+
+        return conputerChoice;
+      }
+    </script>
+  </body>
+</html>
