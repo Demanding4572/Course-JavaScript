@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header></header>
+  <main>
+    <h1>Game score: <span id="generatedText"></span></h1>
+    <button id="button" onclick="myChoice('Rock')">button</button>
+    <button id="button2" onclick="myChoice('Paper')">button2</button>
+    <button id="button3" onclick="myChoice('Scissors')" >button3</button>
+    <script>
+      function random (){
+        let random = Math.random();        
+        if (random >= 0 && random < 1/3) {
+          return 'Rock';
+        } else if (random >= 1/3 && random < 2/3) {
+          return 'Paper';
+        }else if (random >= 2/3 && random < 3/3){
+          return 'Scissors';
+        }
+      }
+      function print (textToPrint){
+        let element = document.getElementById("generatedText");
+        element.innerHTML = textToPrint;
+      }
+      
+      function myChoice(myChoice) {
+        let computerMove = random();
+        let result;
+
+        if (myChoice === computerMove) {
+          result = 'tie';
+        } else if (
+          (myChoice === 'Rock' && computerMove === 'Scissors') ||
+          (myChoice === 'Scissors' && computerMove === 'Paper') ||
+          (myChoice === 'Paper' && computerMove === 'Rock')
+          ){
+          result = 'you win';
+        } else {
+          result = 'you lose';
+        }
+        print(`Your chouse ${myChoice}, computer chouse ${computerMove}, result: ${result}`);
+      
+      }
+    </script>
+  </main>
+  <footer></footer>
+</body>
+</html>
