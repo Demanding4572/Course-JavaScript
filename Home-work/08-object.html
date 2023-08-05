@@ -10,7 +10,7 @@
     <main>
       <h1>Game score: <span id="score">Go</span> </h1>
       <h2 id="generatedText"> </h2>
-      <button id="button" onclick="myChoice('Rock'), calculateScore()">Rock</button>
+      <button id="button" onclick="myChoice('Rock')">Rock</button>
       <button id="button2" onclick="myChoice('Paper')">Paper</button>
       <button id="button3" onclick="myChoice('Scissors')">Scissors</button>
       <script>
@@ -45,6 +45,7 @@
           );
         }
 
+        /*
         function calculateScore() {
           let scoreMyChoice = 0;
           let scoreComputerChoice = 0;
@@ -74,6 +75,9 @@
           };
         }
         console.log(calculateScore());
+        */ 
+
+        
 
         function print(where, textToPrint) {
           let element = document.getElementById(where);
