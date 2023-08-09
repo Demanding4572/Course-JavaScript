@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practic</title>
+  </head>
+  <body>
+    <h1>Game</h1>
+    <br />
+    <h2 id="output"></h2>
+    <br />
+    <button type="button" onclick="myChoice('Rock')">Rock</button>
+    <button type="button" onclick="myChoice('Paper')">Paper</button>
+    <button type="button" onclick="myChoice('Scissors')">Scissors</button>
+    <script>
+      function print(where, whot) {
+        let element = document.getElementById(where);
+        element.innerHTML = whot;
+      }
+
+      function random() {
+        let randomNumber = Math.floor(Math.random() * 3);
+        return randomNumber;
+      }
+
+      function computerMoveToChoice(move) {
+        if (move === 0) {
+          return "Rock";
+        } else if (move === 1) {
+          return "Paper";
+        } else {
+          return "Scissors";
+        }
+      }
+
+      function myChoice(myChoice) {
+        let computerMove = computerMoveToChoice(random()); // Map computer move to choice
+        let result;
+        if (myChoice === computerMove) {
+          result = "tie";
+        } else if (
+          (myChoice === "Rock" && computerMove === "Scissors") ||
+          (myChoice === "Scissors" && computerMove === "Paper") ||
+          (myChoice === "Paper" && computerMove === "Rock")
+        ) {
+          result = "you win";
+        } else {
+          result = "you lose";
+        }
+        print(
+          "output",
+          `Your choice ${myChoice}, computer choice ${computerMove}, result: ${result}`
+        );
+      }
+    </script>
+  </body>
+</html>
+

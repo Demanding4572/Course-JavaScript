@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function</title>
+  </head>
+  <body>
+    <h1>Function</h1>
+    <h2 id="output1">Text to print</h2>
+    <h2 id="output2">Text to print</h2>
+    <button onclick="discount()">check Discount</button>
+    <script>
+      function print(where, whot) {
+        document.getElementById(where).innerHTML = whot;
+      }
+
+      const randomNumber = Math.random();
+      const result = randomNumber < 0.5 ? "heads" : "tails";
+
+      const guess = "heads";
+      print("output1", guess === result ? "You win!" : "You lose!");
+    </script>
+  </body>
+</html>
