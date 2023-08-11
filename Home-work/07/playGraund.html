@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <section>
+        <h1 id="printTo">Rock Paper Scissors</h1>
+      </section>
+      <section>
+        <button onclick="game('rock')">Rock</button>
+        <button onclick="game('paper')">Paper</button>
+        <button onclick="game('scissors')">Scissors</button>
+      </section>
+      <section>
+        <script>
+          function print(id, text) {
+            document.getElementById(id).innerHTML = text;
+          }
+
+          function computerChoice() {
+            let random = Math.floor(Math.random() * 3);
+
+            if (random === 0) {
+              return "rock";
+            } else if (random === 1) {
+              return "paper";
+            } else if (random === 2) {
+              return "scissors";
+            }
+          }
+
+          function game(myChoice) {
+            let computerMove = computerChoice();
+            let result;
+                                               
+            if (myChoice === computerMove) {
+              result = "tie";
+            } else if (
+              (myChoice === "rock" && computerMove === "scissors") ||
+              (myChoice === "scissors" && computerMove === "paper") ||
+              (myChoice === "paper" && computerMove === "rock")
+            ) {
+              result = "you win";
+            } else {
+              result = "you lose";
+            }
+
+            print(
+              "printTo",
+              `Your choice ${myChoice}, computer choice ${computerMove}, result: ${result}`
+            );
+          }
+        </script>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>
