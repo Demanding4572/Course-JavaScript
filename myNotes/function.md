@@ -1,68 +1,27 @@
-gitgraph TD
-
-subgraph "Beginner"
-  A[Basic Concepts]
-  B[Data Types]
-  C[Variables]
-  D[Operators]
-  E[Control Structures]
-  F[Functions]
-  G[Arrays]
-  H[Objects]
-  I[DOM Manipulation]
-  J[Events]
-end
-
-subgraph "Intermediate"
-  K[Closures]
-  L[Scope]
-  M[Prototypes]
-  N[Asynchronous Programming]
-  O[Promises]
-  P[Ajax]
-  Q[ES6+ Features]
-  R[Module Systems]
-  S[Transpilers (Babel)]
-end
-
-subgraph "Advanced"
-  T[Design Patterns]
-  U[Error Handling]
-  V[Testing (Jest, Mocha)]
-  W[Tooling (Webpack, ESLint)]
-  X[Frameworks (React, Angular, Vue)]
-  Y[State Management]
-  Z[RESTful APIs]
-  AA[GraphQL]
-  AB[TypeScript]
-end
-
-A --> B
-B --> C
-C --> D
-D --> E
-E --> F
-F --> G
-G --> H
-H --> I
-I --> J
-
-J --> K
-K --> L
-L --> M
-M --> N
-N --> O
-O --> P
-P --> Q
-Q --> R
-R --> S
-
-S --> T
-T --> U
-U --> V
-V --> W
-W --> X
-X --> Y
-Y --> Z
-Z --> AA
-AA --> AB
+```mermaid
+gitGraph
+  commit id:"Learn Basics"
+  commit id:"DOM Manipulation"
+  commit id:"Events and Event Handling"
+  commit id:"Functions and Scope"
+  branch develop
+    commit id:"AJAX and Fetch API"
+    commit id:"Promises and Async/Await"
+    commit id:"ES6+ Features"
+    commit id:"Module System (CommonJS, ES Modules)"
+    commit id:"Unit Testing (e.g., Jest)"
+    commit id:"Version Control (Git)"
+  checkout main
+    commit id:"Advanced JavaScript Concepts"
+    commit id:"Design Patterns"
+    merge develop
+      commit id:"Build Tools (Webpack, Babel)"
+      commit id:"Frameworks (React, Vue, Angular)"
+      commit id:"State Management (Redux, Vuex)"
+      commit id:"Routing and Navigation"
+      commit id:"API Integration"
+      commit id:"Responsive Design (CSS)"
+      commit id:"Frontend Testing"
+      commit id:"Linting and Code Quality"
+      commit id:"Deployment and Hosting"
+      commit id:"Continuous Integration/Continuous Deployment"
