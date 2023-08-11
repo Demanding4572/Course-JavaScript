@@ -1,4 +1,4 @@
-gitgraph TD
+graph TD
 
 subgraph "Beginner"
   A[Basic Concepts]
